@@ -45,13 +45,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            @if (Auth::user()->hasRole('admin'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a>
-                </li>
-            @endif
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
             @if (Auth::user()->hasRole('admin'))
                 <!-- Nav Item - Tables -->
@@ -323,7 +321,8 @@
                                             <label for="kode_barang" class="form-label">Kode Barang</label>
                                             <input type="text" name="kode_barang"
                                                 class="form-control @error('kode_barang') is-invalid @enderror"
-                                                id="kode_barang" placeholder="Masukkan Kode Barang">
+                                                id="kode_barang" placeholder="Masukkan Kode Barang"
+                                                value="{{ old('kode_barang') }}">
                                             @error('kode_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -334,7 +333,7 @@
                                             <label for="reg" class="form-label">Reg</label>
                                             <input type="text" name="reg"
                                                 class="form-control @error('reg') is-invalid @enderror" id="reg"
-                                                placeholder="Masukkan Reg">
+                                                placeholder="Masukkan Reg" value="{{ old('reg') }}">
                                             @error('reg')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -348,7 +347,8 @@
                                                 Barang</label>
                                             <input type="text" name="nama_jenis_barang"
                                                 class="form-control @error('nama_jenis_barang') is-invalid @enderror"
-                                                id="nama_jenis_barang" placeholder="Masukkan Nama/Jenis Barang">
+                                                id="nama_jenis_barang" placeholder="Masukkan Nama/Jenis Barang"
+                                                value="{{ old('nama_jenis_barang') }}">
                                             @error('nama_jenis_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -360,7 +360,8 @@
                                                 Barang</label>
                                             <input type="text" name="merek_tipe_barang"
                                                 class="form-control @error('merek_tipe_barang') is-invalid @enderror"
-                                                id="merek_tipe_barang" placeholder="Masukkan Merek/Tipe Barang">
+                                                id="merek_tipe_barang" placeholder="Masukkan Merek/Tipe Barang"
+                                                value="{{ old('merek_tipe_barang') }}">
                                             @error('merek_tipe_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -373,7 +374,8 @@
                                             <label for="no_pabrik" class="form-label">No. Pabrik</label>
                                             <input type="text" name="no_pabrik"
                                                 class="form-control @error('no_pabrik') is-invalid @enderror"
-                                                id="no_pabrik" placeholder="Masukkan Nomor Pabrik Barang">
+                                                id="no_pabrik" placeholder="Masukkan Nomor Pabrik Barang"
+                                                value="{{ old('no_pabrik') }}">
                                             @error('no_pabrik')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -384,7 +386,8 @@
                                             <label for="bahan" class="form-label">Bahan</label>
                                             <input type="text" name="bahan"
                                                 class="form-control @error('bahan') is-invalid @enderror"
-                                                id="bahan" placeholder="Masukkan Bahan Barang">
+                                                id="bahan" placeholder="Masukkan Bahan Barang"
+                                                value="{{ old('bahan') }}">
                                             @error('bahan')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -399,7 +402,8 @@
                                             <input type="text" name="perolehan_barang"
                                                 class="form-control @error('perolehan_barang') is-invalid @enderror"
                                                 id="perolehan_barang"
-                                                placeholder="Masukkan Asal/Cara Perolehan Barang">
+                                                placeholder="Masukkan Asal/Cara Perolehan Barang"
+                                                value="{{ old('perolehan_barang') }}">
                                             @error('perolehan_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -410,7 +414,8 @@
                                             <label for="tahun_pembelian" class="form-label">Tahun Pembelian</label>
                                             <input type="number" name="tahun_pembelian"
                                                 class="form-control @error('tahun_pembelian') is-invalid @enderror"
-                                                id="tahun_pembelian" placeholder="Masukkan Tahun Pembelian Barang">
+                                                id="tahun_pembelian" placeholder="Masukkan Tahun Pembelian Barang"
+                                                value="{{ old('tahun_pembelian') }}">
                                             @error('tahun_pembelian')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -423,7 +428,8 @@
                                             <label for="ukuran_barang" class="form-label">Ukuran Barang</label>
                                             <input type="text" name="ukuran_barang"
                                                 class="form-control @error('ukuran_barang') is-invalid @enderror"
-                                                id="ukuran_barang" placeholder="Masukkan Ukuran Barang">
+                                                id="ukuran_barang" placeholder="Masukkan Ukuran Barang"
+                                                value="{{ old('ukuran_barang') }}">
                                             @error('ukuran_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -434,7 +440,8 @@
                                             <label for="satuan" class="form-label">Satuan Barang</label>
                                             <input type="text" name="satuan"
                                                 class="form-control @error('satuan') is-invalid @enderror"
-                                                id="satuan" placeholder="Masukkan Satuan Barang">
+                                                id="satuan" placeholder="Masukkan Satuan Barang"
+                                                value="{{ old('satuan') }}">
                                             @error('satuan')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -447,7 +454,8 @@
                                             <label for="keadaan_barang" class="form-label">Keadaan Barang</label>
                                             <input type="text" name="keadaan_barang"
                                                 class="form-control @error('keadaan_barang') is-invalid @enderror"
-                                                id="keadaan_barang" placeholder="Masukkan Keadaan Barang">
+                                                id="keadaan_barang" placeholder="Masukkan Keadaan Barang"
+                                                value="{{ old('keadaan_barang') }}">
                                             @error('keadaan_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -458,7 +466,8 @@
                                             <label for="banyak_barang" class="form-label">Banyak Barang</label>
                                             <input type="number" name="banyak_barang"
                                                 class="form-control @error('banyak_barang') is-invalid @enderror"
-                                                id="banyak_barang" placeholder="Masukkan Banyak Barang">
+                                                id="banyak_barang" placeholder="Masukkan Banyak Barang"
+                                                value="{{ old('banyak_barang') }}">
                                             @error('banyak_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -472,7 +481,8 @@
                                                 Barang</label>
                                             <input type="number" name="harga_satuan_barang"
                                                 class="form-control @error('harga_satuan_barang') is-invalid @enderror"
-                                                id="harga_satuan_barang" placeholder="Masukkan Harga Satuan Barang">
+                                                id="harga_satuan_barang" placeholder="Masukkan Harga Satuan Barang"
+                                                value="{{ old('harga_satuan_barang') }}">
                                             @error('harga_satuan_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -484,7 +494,8 @@
                                                 Barang</label>
                                             <input type="number" name="jumlah_harga_barang"
                                                 class="form-control @error('jumlah_harga_barang') is-invalid @enderror"
-                                                id="jumlah_harga_barang" placeholder="Masukkan Jumlah Harga Barang">
+                                                id="jumlah_harga_barang" placeholder="Masukkan Jumlah Harga Barang"
+                                                value="{{ old('jumlah_harga_barang') }}">
                                             @error('jumlah_harga_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -497,7 +508,8 @@
                                             <label for="kode_ruangan" class="form-label">Kode Ruangan Barang</label>
                                             <input type="text" name="kode_ruangan"
                                                 class="form-control @error('kode_ruangan') is-invalid @enderror"
-                                                id="kode_ruangan" placeholder="Masukkan Kode Ruangan Barang">
+                                                id="kode_ruangan" placeholder="Masukkan Kode Ruangan Barang"
+                                                value="{{ old('kode_ruangan') }}">
                                             @error('kode_ruangan')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -514,6 +526,9 @@
                                                     </option>
                                                 @endforeach
                                             </select>
+                                            @error('kategori_barang')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -523,7 +538,7 @@
                                             <label for="tanggal_masuk" class="form-label">Tanggal Barang Masuk</label>
                                             <input type="date" name="tanggal_masuk"
                                                 class="form-control @error('tanggal_masuk') is-invalid @enderror"
-                                                id="tanggal_masuk" placeholder="Masukkan Tanggal masuk Barang">
+                                                id="tanggal_masuk" placeholder="Masukkan Tanggal masuk Barang" value="{{old('tanggal_masuk')}}">
                                             @error('tanggal_masuk')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
@@ -534,7 +549,7 @@
                                             <label for="foto_barang" class="form-label">Foto Barang</label>
                                             <input type="file" name="foto_barang"
                                                 class="form-control @error('foto_barang') is-invalid @enderror"
-                                                id="foto_barang" placeholder="Masukkan Foto Barang">
+                                                id="foto_barang" placeholder="Masukkan Foto Barang" value="{{old('foto_barang')}}">
                                             @error('foto_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror

@@ -4,14 +4,17 @@ document.addEventListener('DOMContentLoaded', function () {
   
   var ctx = document.getElementById("myPieChart");
 
-  var datapotong = chartData.slice(-3);
+  var datapotong = chartData.barangmasuk.slice(-3);
+
+  var datapotong1 = chartData.barangsemua.slice(-3);
+
 
   var myPieChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: datapotong.map(item => item.nama_barang),
+      labels: datapotong.map(item => item.nama_jenis_barang),
       datasets: [{
-        data: datapotong.map(item => item.stok),
+        data: datapotong1.map(item => item.banyak_barang),
         backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
         hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
         hoverBorderColor: "rgba(234, 236, 244, 1)",

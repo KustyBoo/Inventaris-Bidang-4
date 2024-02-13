@@ -45,13 +45,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            @if (Auth::user()->hasRole('admin'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a>
-                </li>
-            @endif
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
             @if (Auth::user()->hasRole('admin'))
                 <!-- Nav Item - Tables -->
@@ -319,6 +317,11 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                Barang Asset
+                            </h6>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -340,7 +343,7 @@
                                             <th>Jumlah Harga</th>
                                             <th>Kode Ruangan</th>
                                             <th>Tanggal Masuk</th>
-                                            <th>Foto</th>
+                                            <th>Foto Barang</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
@@ -350,7 +353,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($barangmasuk as $key => $barang)
+                                        @foreach ($barangaset as $key => $barang)
                                             <tr>
                                                 <td>{{ $barang->barang->kode_barang }}</td>
                                                 <td>{{ $barang->reg }}</td>
@@ -368,7 +371,83 @@
                                                 <td>{{ $barang->jumlah_harga_barang }}</td>
                                                 <td>{{ $barang->kode_ruangan }}</td>
                                                 <td>{{ $barang->tanggal_masuk }}</td>
-                                                <td><img src="{{asset('img/barang/'. $barang->foto_barang)}}" alt="" style="width: 150px"></td>
+                                                <td><img src="{{ asset('img/barang/' . $barang->foto_barang) }}"
+                                                        alt="" style="width: 150px"></td>
+                                                <form action="{{ route('barangmasuk.destroy', $barang->id) }}"
+                                                    method="post" onsubmit="return confirm('Are you sure?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <td><a href="{{ route('barangmasuk.edit', $barang->id) }}"
+                                                            class="btn btn-warning">Edit</a>
+                                                    </td>
+                                                    <td><input type="submit" value="Delete" class="btn btn-danger">
+                                                    </td>
+                                                </form>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                Barang Habis Pakai
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Kode Barang</th>
+                                            <th>Reg</th>
+                                            <th>Nama/Jenis Barang</th>
+                                            <th>Merek/Tipe</th>
+                                            <th>No. Pabrik</th>
+                                            <th>Bahan</th>
+                                            <th>Perolehan Barang</th>
+                                            <th>Tahun Pembelian</th>
+                                            <th>Ukuran Barang</th>
+                                            <th>Satuan</th>
+                                            <th>Keadaan Barang</th>
+                                            <th>Banyak Barang</th>
+                                            <th>Harga Satuan</th>
+                                            <th>Jumlah Harga</th>
+                                            <th>Kode Ruangan</th>
+                                            <th>Tanggal Masuk</th>
+                                            <th>Foto Barang</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        @foreach ($baranghabispakai as $key => $barang)
+                                            <tr>
+                                                <td>{{ $barang->barang->kode_barang }}</td>
+                                                <td>{{ $barang->reg }}</td>
+                                                <td>{{ $barang->nama_jenis_barang }}</td>
+                                                <td>{{ $barang->merek_tipe_barang }}</td>
+                                                <td>{{ $barang->no_pabrik }}</td>
+                                                <td>{{ $barang->bahan }}</td>
+                                                <td>{{ $barang->perolehan_barang }}</td>
+                                                <td>{{ $barang->tahun_pembelian }}</td>
+                                                <td>{{ $barang->ukuran_barang }}</td>
+                                                <td>{{ $barang->satuan }}</td>
+                                                <td>{{ $barang->keadaan_barang }}</td>
+                                                <td>{{ $barang->barang->banyak_barang }}</td>
+                                                <td>{{ $barang->harga_satuan_barang }}</td>
+                                                <td>{{ $barang->jumlah_harga_barang }}</td>
+                                                <td>{{ $barang->kode_ruangan }}</td>
+                                                <td>{{ $barang->tanggal_masuk }}</td>
+                                                <td><img src="{{ asset('img/barang/' . $barang->foto_barang) }}"
+                                                        alt="" style="width: 150px"></td>
                                                 <form action="{{ route('barangmasuk.destroy', $barang->id) }}"
                                                     method="post" onsubmit="return confirm('Are you sure?')">
                                                     @csrf

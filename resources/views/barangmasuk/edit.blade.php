@@ -45,13 +45,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            @if (Auth::user()->hasRole('admin'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a>
-                </li>
-            @endif
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
             @if (Auth::user()->hasRole('admin'))
                 <!-- Nav Item - Tables -->
@@ -522,9 +520,9 @@
                                         <div class="mb-3">
                                             <label for="kategori_barang" class="form-label">Kategori Barang</label>
                                             <select class="form-control" name="kategori_barang"
-                                                aria-label="Default Select Example"
-                                                 id="kategori_barang">
-                                                <option selected>{{ $barangmasuk->kategori->name }}</option>
+                                                aria-label="Default Select Example" id="kategori_barang">
+                                                <option selected value="{{ $barangmasuk->kategori_barang }}">
+                                                    {{ $barangmasuk->kategori->name }}</option>
                                                 @foreach ($kategori as $kategori)
                                                     <option value="{{ $kategori->id }}">{{ $kategori->name }}
                                                     </option>

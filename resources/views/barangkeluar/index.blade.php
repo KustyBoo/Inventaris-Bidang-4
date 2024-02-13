@@ -45,14 +45,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <!-- Nav Item - Dashboard -->
-            @if (Auth::user()->hasRole('admin'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a>
-                </li>
-            @endif
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
             @if (Auth::user()->hasRole('admin'))
                 <!-- Nav Item - Tables -->
@@ -332,7 +329,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Barang</th>
-                                                <th>Harga</th>
+                                                <th>Kode Ruangan</th>
                                                 <th>Stok</th>
                                                 <th>Tanggal Masuk</th>
                                             </tr>
@@ -344,9 +341,9 @@
                                         <tbody>
                                             @foreach ($barangmasuk as $barang)
                                                 <tr>
-                                                    <td>{{ $barang->nama_barang }}</td>
-                                                    <td>{{ $barang->harga }}</td>
-                                                    <td>{{ $barang->stok }}</td>
+                                                    <td>{{ $barang->nama_jenis_barang }}</td>
+                                                    <td>{{ $barang->kode_ruangan }}</td>
+                                                    <td>{{ $barang->barang->banyak_barang }}</td>
                                                     <td>{{ $barang->tanggal_masuk }}</td>
                                                 </tr>
                                             @endforeach
@@ -362,6 +359,7 @@
                                                 <th>Nama Pengambil</th>
                                                 <th>Nama Barang</th>
                                                 <th>Jumlah Ambil</th>
+                                                <th>Foto Barang</th>
                                                 <th>Tanggal Keluar</th>
                                             </tr>
                                         </thead>
@@ -373,8 +371,10 @@
                                             @foreach ($barangkeluar as $key => $barang)
                                                 <tr>
                                                     <td>{{ $barang->nama_pengambil }}</td>
-                                                    <td>{{ $barang->barangmasuk->nama_barang }}</td>
-                                                    <td>{{ $barang->jumlah_ambil }}</td>
+                                                    <td>{{ $barang->barang_masuk->nama_jenis_barang }}</td>
+                                                    <td>{{ $barang->banyak_barang }}</td>
+                                                    <td><img src="{{ asset('img/barangkeluar/' . $barang->foto_barang) }}"
+                                                            alt="" style="width: 150px"></td>
                                                     <td>{{ $barang->tanggal_keluar }}</td>
                                                 </tr>
                                             @endforeach

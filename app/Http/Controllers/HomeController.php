@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use App\Models\User;
 use App\Models\BarangKeluar;
 use App\Models\BarangMasuk;
@@ -28,11 +29,13 @@ class HomeController extends Controller
 
     public function index()
     {
+        $barang = Barang::all();
+
         $barangmasuk = BarangMasuk::all();
         $barangmasuktotal = $barangmasuk->count();
 
-        $barangkeluar = BarangKeluar::all();
-        $barangkeluartotal = $barangkeluar->count();
+        $barang_keluar = BarangKeluar::with('barang_masuk')->get();
+        $barangkeluartotal = $barang_keluar->count();
 
         $totalbarangmasukkeluar = $barangmasuktotal + $barangkeluartotal;
 
@@ -58,10 +61,16 @@ class HomeController extends Controller
             $barangmasuktiapbulancount[$hitungbarang->month] = $hitungbarang->count;
         }
 
+        $barangaset = BarangMasuk::where('kategori_barang', '1')->get();
+        $baranghabispakai = BarangMasuk::where('kategori_barang', '2')->get();
+
         return view('home', [
+            'barangaset' => $barangaset,
+            'baranghabispakai' => $baranghabispakai,
+            'barangsemua' => $barang,
             'barangmasuktiapbulan' => $barangmasuktiapbulancount,
             'barangmasuk' => $barangmasuk,
-            'barangkeluar' => $barangkeluar,
+            'barangkeluar' => $barang_keluar,
             'daftaruser' => $daftaruser,
             'total30hari' => $total30hari,
             'barangmasuktotal' => $barangmasuktotal,

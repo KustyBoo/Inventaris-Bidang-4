@@ -45,13 +45,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            @if (Auth::user()->hasRole('admin'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a>
-                </li>
-            @endif
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
             @if (Auth::user()->hasRole('admin'))
                 <!-- Nav Item - Tables -->
@@ -362,7 +360,8 @@
                                         class="form-label">{{ __('Confirm Password') }}</label>
 
                                     <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required placeholder="Masukkan Konfirmasi Password">
+                                        name="password_confirmation" required
+                                        placeholder="Masukkan Konfirmasi Password">
                                 </div>
 
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">

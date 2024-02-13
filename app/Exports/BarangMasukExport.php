@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use App\Models\Barang;
 use App\Models\BarangMasuk;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\Exportable;
@@ -15,18 +16,20 @@ class BarangMasukExport implements FromView
 
     use Exportable;
 
-    public $tanggal_masuk, $barang_masuk;
+    public $tanggal_masuk, $barangaset, $baranghabispakai;
 
-    public function __construct($tanggal_masuk, $barang_masuk)
+    public function __construct($tanggal_masuk, $barangaset, $baranghabispakai)
     {
         $this->tanggal_masuk = $tanggal_masuk;
-        $this->barang_masuk = $barang_masuk;
+        $this->barangaset = $barangaset;
+        $this->baranghabispakai = $baranghabispakai;
     }
 
     public function view(): View
     {
-        $barang_masuk = BarangMasuk::all();
-        return view('barangmasuk.export', ['barangmasuk' => $this->barang_masuk, 'tanggal_masuk' => $this->tanggal_masuk]);
+        $barangaset = BarangMasuk::where('kategori_barang', '1')->get();
+        $baranghabispakai = BarangMasuk::where('kategori_barang', '2')->get();
+        return view('barangmasuk.export', ['barangaset' => $this->barangaset, 'baranghabispakai' => $this->baranghabispakai]);
     }
 
 }
