@@ -352,7 +352,7 @@
                                     <tbody>
                                         @foreach ($barangmasuk as $key => $barang)
                                             <tr>
-                                                <td>{{ $barang->barangstok->kode_barang }}</td>
+                                                <td>{{ $barang->barang->kode_barang }}</td>
                                                 <td>{{ $barang->reg }}</td>
                                                 <td>{{ $barang->nama_jenis_barang }}</td>
                                                 <td>{{ $barang->merek_tipe_barang }}</td>
@@ -363,12 +363,12 @@
                                                 <td>{{ $barang->ukuran_barang }}</td>
                                                 <td>{{ $barang->satuan }}</td>
                                                 <td>{{ $barang->keadaan_barang }}</td>
-                                                <td>{{ $barang->barangstok->banyak_barang }}</td>
+                                                <td>{{ $barang->barang->banyak_barang }}</td>
                                                 <td>{{ $barang->harga_satuan_barang }}</td>
                                                 <td>{{ $barang->jumlah_harga_barang }}</td>
                                                 <td>{{ $barang->kode_ruangan }}</td>
                                                 <td>{{ $barang->tanggal_masuk }}</td>
-                                                <td>{{ $barang->foto_barang }}</td>
+                                                <td><img src="{{asset('img/barang/'. $barang->foto_barang)}}" alt="" style="width: 150px"></td>
                                                 <form action="{{ route('barangmasuk.destroy', $barang->id) }}"
                                                     method="post" onsubmit="return confirm('Are you sure?')">
                                                     @csrf

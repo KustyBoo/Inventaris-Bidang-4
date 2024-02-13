@@ -12,14 +12,14 @@ class BarangMasuk extends Model
     protected $guarded = [];
 
     public function barang(){
-        return $this->belongsTo(Barang::class,'barang_id');
+        return $this->belongsTo(Barang::class,'id_barang');
     }
 
     public function barang_keluar(){
-        return $this->hasMany(BarangKeluar::class,'barang_id');
+        return $this->hasMany(BarangKeluar::class,'id_barang');
     }
 
     public function kategori(){
-        return $this->belongsTo(Kategori::class,'kategori_id');
+        return $this->belongsTo(Kategori::class,'kategori_barang');
     }
 }
