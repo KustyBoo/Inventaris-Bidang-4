@@ -16,7 +16,7 @@ class BarangMasuk extends Model
     }
 
     public function barang_keluar(){
-        return $this->hasMany(BarangKeluar::class,'id_barang');
+        return $this->hasMany(BarangKeluar::class,'id_barang_masuk');
     }
 
     public function kategori(){

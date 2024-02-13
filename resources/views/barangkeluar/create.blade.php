@@ -332,7 +332,7 @@
                                         aria-label="Default Select Example">
                                         <option selected>Pilih Barang</option>
                                         @foreach ($barangmasuk as $barang)
-                                            <option value="{{ $barang->id }}">{{ $barang->nama_barang }}
+                                            <option value="{{ $barang->id }}">{{ $barang->nama_jenis_barang }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -355,6 +355,17 @@
                                         <p class="form-text" style="color: red;">{{ $message }}</p>
                                     @enderror
                                 </div>
+                                <div class="col-sm-12 col-md col-lg col-xl">
+                                        <div class="mb-3">
+                                            <label for="foto_barang" class="form-label">Foto Barang</label>
+                                            <input type="file" name="foto_barang"
+                                                class="form-control @error('foto_barang') is-invalid @enderror"
+                                                id="foto_barang" placeholder="Masukkan Foto Barang">
+                                            @error('foto_barang')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                     <a href="{{ route('barangkeluar.index') }}" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">

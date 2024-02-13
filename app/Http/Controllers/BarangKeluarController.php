@@ -13,7 +13,7 @@ class BarangKeluarController extends Controller
     public function index()
     {   
         $barang_masuk = BarangMasuk::all(); 
-        $barang_keluar = BarangKeluar::with('barang_keluar')->get();
+        $barang_keluar = BarangKeluar::with('barang_masuk')->get();
         return view('barangkeluar.index', ['barangkeluar' => $barang_keluar, 'barangmasuk' => $barang_masuk]);
     }
 
@@ -35,7 +35,13 @@ class BarangKeluarController extends Controller
             'barang_id' => ['required'],
             'jumlah_ambil' => ['required', 'numeric'],
             'tanggal_keluar' => ['required', 'date'],
+            'foto_barang' => ['required', 'file','mimes:jpeg,png'],
         ]);
+
+        $photo = $request->file('foto_barang');
+        $destinationPath = 'img/barang';
+        $sendPhoto = date('YmdHis') . '.' . $photo->getClientOriginalExtension();
+        $photo->move($destinationPath, $sendPhoto);
 
         $id_barang_masuk = BarangMasuk::find($request->barang_id);
 
@@ -54,6 +60,7 @@ class BarangKeluarController extends Controller
                     'barang_id' => $request->barang_id,
                     'jumlah_ambil' => $request->jumlah_ambil,
                     'tanggal_keluar' => $request->tanggal_keluar,
+                    'foto_barang' => $sendPhoto,
                 ]);
 
                 return redirect()->route('barangkeluar.index');
