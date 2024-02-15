@@ -16,11 +16,10 @@ class BarangMasukExport implements FromView
 
     use Exportable;
 
-    public $tanggal_masuk, $barangaset, $baranghabispakai;
+    public $barangaset, $baranghabispakai;
 
-    public function __construct($tanggal_masuk, $barangaset, $baranghabispakai)
+    public function __construct($barangaset, $baranghabispakai)
     {
-        $this->tanggal_masuk = $tanggal_masuk;
         $this->barangaset = $barangaset;
         $this->baranghabispakai = $baranghabispakai;
     }

@@ -167,13 +167,14 @@ class BarangMasukController extends Controller
             'tanggal_masuk' => $request->tanggal_masuk,
         ]);
 
-        $photo = $request->file('foto_barang');
-        $destinationPath = 'img/barang/';
-        $sendPhoto = date('YmdHis') . '.' . $photo->getClientOriginalExtension();
-        $photo->move($destinationPath, $sendPhoto);
-        File::delete('img/barang/' . $barang_masuk->foto_barang);
-        $barang_masuk->update(['foto_barang' => $sendPhoto]);
-
+        if($request->foto_barang){
+            $photo = $request->file('foto_barang');
+            $destinationPath = 'img/barang/';
+            $sendPhoto = date('YmdHis') . '.' . $photo->getClientOriginalExtension();
+            $photo->move($destinationPath, $sendPhoto);
+            File::delete('img/barang/' . $barang_masuk->foto_barang);
+            $barang_masuk->update(['foto_barang' => $sendPhoto]);
+        }
         return redirect()->route('barangmasuk.index');
     }
 
@@ -190,15 +191,17 @@ class BarangMasukController extends Controller
 
     public function export(Request $request)
     {
-        $tanggal_masuk = $request->tanggal_masuk;
-        if (isset($tanggal_masuk)) {
-            $barangaset = BarangMasuk::where('tanggal_masuk', $tanggal_masuk)->where('kategori_barang', '1')->get();
-            $baranghabispakai = BarangMasuk::where('tanggal_masuk', $tanggal_masuk)->where('kategori_barang', '2')->get();
-            return Excel::download(new BarangMasukExport($tanggal_masuk, $barangaset, $baranghabispakai), 'Data-Barang-Masuk.xlsx');
-        } else {
+        $barangaset = collect();
+        $baranghabispakai = collect();
+        
+        if (isset($request->tanggal_masuk)) {
+            $barangaset = BarangMasuk::where('tanggal_masuk', $request->tanggal_masuk)->where('kategori_barang', '1')->get();
+            $baranghabispakai = BarangMasuk::where('tanggal_masuk', $request->tanggal_masuk)->where('kategori_barang', '2')->get();
+        } 
+        if($request->tanggal_masuk == null){
             $barangaset = BarangMasuk::where('kategori_barang', '1')->get();
             $baranghabispakai = BarangMasuk::where('kategori_barang', '2')->get();
-            return Excel::download(new BarangMasukExport($tanggal_masuk, $barangaset, $baranghabispakai), 'Data-Barang-Masuk.xlsx');
         }
+        return Excel::download(new BarangMasukExport($barangaset, $baranghabispakai), 'Data-Barang-Masuk.xlsx');
     }
 }

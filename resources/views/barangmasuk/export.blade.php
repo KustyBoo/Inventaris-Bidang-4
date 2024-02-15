@@ -1,5 +1,6 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
+        <caption>Barang Asset</caption>
         <tr>
             <th>Kode Barang</th>
             <th>Reg</th>
@@ -17,7 +18,6 @@
             <th>Jumlah Harga</th>
             <th>Kode Ruangan</th>
             <th>Tanggal Masuk</th>
-            <th>Foto Barang</th>
         </tr>
     </thead>
     <tfoot>
@@ -43,15 +43,14 @@
                 <td>{{ $barang->jumlah_harga_barang }}</td>
                 <td>{{ $barang->kode_ruangan }}</td>
                 <td>{{ $barang->tanggal_masuk }}</td>
-                <td><img src="{{ asset('img/barang/' . $barang->foto_barang) }}" alt="" style="width: 150px">
-                </td>
             </tr>
         @endforeach
     </tbody>
 </table>
-
+<br>
 <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
     <thead>
+        <caption>Barang Habis Pakai</caption>
         <tr>
             <th>Kode Barang</th>
             <th>Reg</th>
@@ -69,7 +68,6 @@
             <th>Jumlah Harga</th>
             <th>Kode Ruangan</th>
             <th>Tanggal Masuk</th>
-            <th>Foto Barang</th>
         </tr>
     </thead>
     <tfoot>
@@ -95,7 +93,6 @@
                 <td>{{ $barang->jumlah_harga_barang }}</td>
                 <td>{{ $barang->kode_ruangan }}</td>
                 <td>{{ $barang->tanggal_masuk }}</td>
-                <td><img src="{{ asset('img/barang/' . $barang->foto_barang) }}" alt="" style="width: 150px"></td>
             </tr>
         @endforeach
     </tbody>
