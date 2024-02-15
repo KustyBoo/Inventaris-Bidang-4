@@ -331,6 +331,7 @@
                                                 <th>Nama Barang</th>
                                                 <th>Kode Ruangan</th>
                                                 <th>Stok</th>
+                                                <th>Foto</th>
                                                 <th>Tanggal Masuk</th>
                                             </tr>
                                         </thead>
@@ -344,6 +345,8 @@
                                                     <td>{{ $barang->nama_jenis_barang }}</td>
                                                     <td>{{ $barang->kode_ruangan }}</td>
                                                     <td>{{ $barang->barang->banyak_barang }}</td>
+                                                    <td><img src="{{ asset('img/barang/' . $barang->foto_barang) }}"
+                                                            alt="" style="width: 150px"></td>
                                                     <td>{{ $barang->tanggal_masuk }}</td>
                                                 </tr>
                                             @endforeach
