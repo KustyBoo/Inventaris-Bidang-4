@@ -367,8 +367,8 @@
                                                 <td>{{ $barang->satuan }}</td>
                                                 <td>{{ $barang->keadaan_barang }}</td>
                                                 <td>{{ $barang->barang->banyak_barang }}</td>
-                                                <td>{{ $barang->harga_satuan_barang }}</td>
-                                                <td>{{ $barang->jumlah_harga_barang }}</td>
+                                                <td>{{ 'Rp' . number_format($barang->harga_satuan_barang, 2) }}</td>
+                                                <td>{{ 'Rp' . number_format($barang->jumlah_harga_barang, 2) }}</td>
                                                 <td>{{ $barang->kode_ruangan }}</td>
                                                 <td>{{ $barang->tanggal_masuk }}</td>
                                                 <td><img src="{{ asset('img/barang/' . $barang->foto_barang) }}"
@@ -442,8 +442,8 @@
                                                 <td>{{ $barang->satuan }}</td>
                                                 <td>{{ $barang->keadaan_barang }}</td>
                                                 <td>{{ $barang->barang->banyak_barang }}</td>
-                                                <td>{{ $barang->harga_satuan_barang }}</td>
-                                                <td>{{ $barang->jumlah_harga_barang }}</td>
+                                                <td>{{ 'Rp' . number_format($barang->harga_satuan_barang, 2) }}</td>
+                                                <td>{{ 'Rp' . number_format($barang->jumlah_harga_barang, 2) }}</td>
                                                 <td>{{ $barang->kode_ruangan }}</td>
                                                 <td>{{ $barang->tanggal_masuk }}</td>
                                                 <td><img src="{{ asset('img/barang/' . $barang->foto_barang) }}"

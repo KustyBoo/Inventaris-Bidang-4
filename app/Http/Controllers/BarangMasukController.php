@@ -57,7 +57,6 @@ class BarangMasukController extends Controller
             'keadaan_barang' => ['required'],
             'banyak_barang' => ['required'],
             'harga_satuan_barang' => ['required', 'numeric'],
-            'jumlah_harga_barang' => ['required', 'numeric'],
             'kode_ruangan' => ['required', 'numeric'],
             'tanggal_masuk' => ['required', 'date'],
             'foto_barang' => ['required', 'file', 'mimes:jpeg,png'],
@@ -74,6 +73,8 @@ class BarangMasukController extends Controller
         if (($request->banyak_barang) == 0) {
             return back()->withErrors(['banyak_barang' => 'jumlah tidak bisa kosong'])->withInput();
         }
+
+        $jumlah_harga_barang = $request->banyak_barang * $request->harga_satuan_barang;
 
         $photo = $request->file('foto_barang');
         $destinationPath = 'img/barang';
@@ -97,7 +98,7 @@ class BarangMasukController extends Controller
             'satuan' => $request->satuan,
             'keadaan_barang' => $request->keadaan_barang,
             'harga_satuan_barang' => $request->harga_satuan_barang,
-            'jumlah_harga_barang' => $request->jumlah_harga_barang,
+            'jumlah_harga_barang' => $jumlah_harga_barang,
             'kode_ruangan' => $request->kode_ruangan,
             'id_barang' => $barang->id,
             'kategori_barang' => $request->kategori_barang,
@@ -117,6 +118,7 @@ class BarangMasukController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $request->validate([
             'kode_barang' => ['required'],
             'reg' => ['required'],
@@ -127,15 +129,15 @@ class BarangMasukController extends Controller
             'keadaan_barang' => ['required'],
             'banyak_barang' => ['required'],
             'harga_satuan_barang' => ['required', 'numeric'],
-            'jumlah_harga_barang' => ['required', 'numeric'],
             'kode_ruangan' => ['required', 'numeric'],
             'tanggal_masuk' => ['required', 'date'],
-            'kategori_barang' => ['required', 'numeric'],
         ]);
 
         if (($request->banyak_barang) == 0) {
             return back()->withErrors(['banyak_barang' => 'jumlah tidak bisa kosong']);
         }
+
+        $jumlah_harga_barang = $request->banyak_barang * $request->harga_satuan_barang;
 
         $barang_masuk = BarangMasuk::find($id);
 
@@ -160,7 +162,7 @@ class BarangMasukController extends Controller
             'satuan' => $request->satuan,
             'keadaan_barang' => $request->keadaan_barang,
             'harga_satuan_barang' => $request->harga_satuan_barang,
-            'jumlah_harga_barang' => $request->jumlah_harga_barang,
+            'jumlah_harga_barang' => $jumlah_harga_barang,
             'kode_ruangan' => $request->kode_ruangan,
             'id_barang' => $barang->id,
             'kategori_barang' => $request->kategori_barang,

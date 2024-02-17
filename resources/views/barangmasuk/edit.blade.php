@@ -143,124 +143,6 @@
                             </div>
                         </li>
 
-                        {{-- <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to
-                                            download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All
-                                    Alerts</a>
-                            </div>
-                        </li> --}}
-
-                        {{-- <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun · 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy
-                                            with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle"
-                                            src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More
-                                    Messages</a>
-                            </div>
-                        </li> --}}
-
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -274,18 +156,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                {{-- <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a> --}}
                                 {{-- <div class="dropdown-divider"></div> --}}
                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                     data-target="#logoutModal">
@@ -317,9 +187,9 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="kode_barang" class="form-label">Kode Barang</label>
+                                            <label for="kode_barang" class="form-label"><b>Kode Barang</b></label>
                                             <input type="text" name="kode_barang"
                                                 class="form-control @error('kode_barang') is-invalid @enderror"
                                                 id="kode_barang" placeholder="Masukkan Kode Barang"
@@ -329,9 +199,9 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="reg" class="form-label">Reg</label>
+                                            <label for="reg" class="form-label"><b>Reg</b></label>
                                             <input type="text" name="reg"
                                                 class="form-control @error('reg') is-invalid @enderror" id="reg"
                                                 placeholder="Masukkan Reg" value="{{ $barangmasuk->reg }}">
@@ -340,12 +210,10 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="nama_jenis_barang" class="form-label">Nama/Jenis
-                                                Barang</label>
+                                            <label for="nama_jenis_barang" class="form-label"><b>Nama/Jenis
+                                                    Barang</b></label>
                                             <input type="text" name="nama_jenis_barang"
                                                 class="form-control @error('nama_jenis_barang') is-invalid @enderror"
                                                 id="nama_jenis_barang" placeholder="Masukkan Nama/Jenis Barang"
@@ -355,10 +223,10 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="merek_tipe_barang" class="form-label">Merek/Tipe
-                                                Barang</label>
+                                            <label for="merek_tipe_barang" class="form-label"><b>Merek/Tipe
+                                                    Barang</b></label>
                                             <input type="text" name="merek_tipe_barang"
                                                 class="form-control @error('merek_tipe_barang') is-invalid @enderror"
                                                 id="merek_tipe_barang" placeholder="Masukkan Merek/Tipe Barang"
@@ -368,11 +236,9 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="no_pabrik" class="form-label">No. Pabrik</label>
+                                            <label for="no_pabrik" class="form-label"><b>No. Pabrik</b></label>
                                             <input type="text" name="no_pabrik"
                                                 class="form-control @error('no_pabrik') is-invalid @enderror"
                                                 id="no_pabrik" placeholder="Masukkan Nomor Pabrik Barang"
@@ -382,37 +248,51 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="bahan" class="form-label">Bahan</label>
-                                            <input type="text" name="bahan"
-                                                class="form-control @error('bahan') is-invalid @enderror"
-                                                id="bahan" placeholder="Masukkan Bahan Barang"
-                                                value="{{ $barangmasuk->bahan }}">
+                                            <label for="bahan" class="form-label"><b>Bahan</b></label>
+                                            <select name="bahan" class="form-control" id="">
+                                                <option value="" disabled selected>Pilih jenis bahan</option>
+                                                <option value="Besi" {{ $barangmasuk->bahan == 'Besi' ? 'selected' : '' }}>
+                                                    Besi</option>
+                                                <option value="Besi, Plastik, dan Busa"
+                                                    {{ $barangmasuk->bahan == 'Besi, Plastik, dan Busa' ? 'selected' : '' }}>
+                                                    Besi, Plastik, dan Busa</option>
+                                                <option value="Campuran"
+                                                    {{ $barangmasuk->bahan == 'Campuran' ? 'selected' : '' }}>Campuran
+                                                </option>
+                                                <option value="Kayu" {{ $barangmasuk->bahan == 'Kayu' ? 'selected' : '' }}>
+                                                    Kayu</option>
+                                                <option value="Plastik dan Busa"
+                                                    {{ $barangmasuk->bahan == 'Plastik dan Busa' ? 'selected' : '' }}>Plastik
+                                                    dan Busa</option>
+                                            </select>
                                             @error('bahan')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="perolehan_barang" class="form-label">Asal/Cara Perolehan
-                                                Barang</label>
-                                            <input type="text" name="perolehan_barang"
-                                                class="form-control @error('perolehan_barang') is-invalid @enderror"
-                                                id="perolehan_barang"
-                                                placeholder="Masukkan Asal/Cara Perolehan Barang"
-                                                value="{{ $barangmasuk->perolehan_barang }}">
+                                            <label for="perolehan_barang" class="form-label"><b>Asal/Cara Perolehan
+                                                    Barang</b></label>
+                                            <select name="perolehan_barang" class="form-control" id="">
+                                                <option disabled selected>
+                                                    Pilih cara perolehan barang
+                                                </option>
+                                                <option value="Pembelian"
+                                                    {{ $barangmasuk->perolehan_barang == 'Pembelian' ? 'selected' : '' }}>
+                                                    Pembelian</option>
+                                            </select>
                                             @error('perolehan_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="tahun_pembelian" class="form-label">Tahun Pembelian</label>
+                                            <label for="tahun_pembelian" class="form-label"><b>Tahun
+                                                    Pembelian</b></label>
                                             <input type="number" name="tahun_pembelian"
                                                 class="form-control @error('tahun_pembelian') is-invalid @enderror"
                                                 id="tahun_pembelian" placeholder="Masukkan Tahun Pembelian Barang"
@@ -422,11 +302,9 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="ukuran_barang" class="form-label">Ukuran Barang</label>
+                                            <label for="ukuran_barang" class="form-label"><b>Ukuran Barang</b></label>
                                             <input type="text" name="ukuran_barang"
                                                 class="form-control @error('ukuran_barang') is-invalid @enderror"
                                                 id="ukuran_barang" placeholder="Masukkan Ukuran Barang"
@@ -436,9 +314,9 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="satuan" class="form-label">Satuan Barang</label>
+                                            <label for="satuan" class="form-label"><b>Satuan Barang</b></label>
                                             <input type="text" name="satuan"
                                                 class="form-control @error('satuan') is-invalid @enderror"
                                                 id="satuan" placeholder="Masukkan Satuan Barang"
@@ -448,23 +326,32 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="keadaan_barang" class="form-label">Keadaan Barang</label>
-                                            <input type="text" name="keadaan_barang"
-                                                class="form-control @error('keadaan_barang') is-invalid @enderror"
-                                                id="keadaan_barang" placeholder="Masukkan Keadaan Barang"
-                                                value="{{ $barangmasuk->keadaan_barang }}">
+                                            <label for="keadaan_barang" class="form-label"><b>Keadaan
+                                                    Barang</b></label>
+                                            <select name="keadaan_barang" class="form-control" id="">
+                                                <option value="" disabled selected>Pilih keadaan barang</option>
+                                                <option value="Baik"
+                                                    {{ $barangmasuk->keadaan_barang == 'Baik' ? 'selected' : '' }}>
+                                                    Baik</option>
+                                                <option value="Kurang Baik"
+                                                    {{ $barangmasuk->keadaan_barang == 'Kurang Baik' ? 'selected' : '' }}>
+                                                    Kurang Baik</option>
+                                                <option value="Rusak Berat"
+                                                    {{ $barangmasuk->keadaan_barang == 'Rusak Berat' ? 'selected' : '' }}>
+                                                    Rusak Berat
+                                                </option>
+                                            </select>
+
                                             @error('keadaan_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="banyak_barang" class="form-label">Banyak Barang</label>
+                                            <label for="banyak_barang" class="form-label"><b>Banyak Barang</b></label>
                                             <input type="number" name="banyak_barang"
                                                 class="form-control @error('banyak_barang') is-invalid @enderror"
                                                 id="banyak_barang" placeholder="Masukkan Banyak Barang"
@@ -474,12 +361,10 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="harga_satuan_barang" class="form-label">Harga Satuan
-                                                Barang</label>
+                                            <label for="harga_satuan_barang" class="form-label"><b>Harga Satuan
+                                                    Barang</b></label>
                                             <input type="number" name="harga_satuan_barang"
                                                 class="form-control @error('harga_satuan_barang') is-invalid @enderror"
                                                 id="harga_satuan_barang" placeholder="Masukkan Harga Satuan Barang"
@@ -489,24 +374,10 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="jumlah_harga_barang" class="form-label">Jumlah Harga
-                                                Barang</label>
-                                            <input type="number" name="jumlah_harga_barang"
-                                                class="form-control @error('jumlah_harga_barang') is-invalid @enderror"
-                                                id="jumlah_harga_barang" placeholder="Masukkan Jumlah Harga Barang"
-                                                value="{{ $barangmasuk->jumlah_harga_barang }}">
-                                            @error('jumlah_harga_barang')
-                                                <p class="form-text" style="color: red;">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
-                                        <div class="mb-3">
-                                            <label for="kode_ruangan" class="form-label">Kode Ruangan Barang</label>
+                                            <label for="kode_ruangan" class="form-label"><b>Kode Ruangan
+                                                    Barang</b></label>
                                             <input type="text" name="kode_ruangan"
                                                 class="form-control @error('kode_ruangan') is-invalid @enderror"
                                                 id="kode_ruangan" placeholder="Masukkan Kode Ruangan Barang"
@@ -516,25 +387,23 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
                                             <label for="kategori_barang" class="form-label">Kategori Barang</label>
-                                            <select class="form-control" name="kategori_barang"
-                                                aria-label="Default Select Example" id="kategori_barang">
-                                                <option selected value="{{ $barangmasuk->kategori_barang }}">
-                                                    {{ $barangmasuk->kategori->name }}</option>
-                                                @foreach ($kategori as $kategori)
-                                                    <option value="{{ $kategori->id }}">{{ $kategori->name }}
+                                            <select class="form-control" name="kategori_barang" aria-label="Default Select Example" id="kategori_barang">
+                                                <option value="" disabled>Pilih Kategori Barang</option>
+                                                @foreach ($kategori as $kategoriItem)
+                                                    <option value="{{ $kategoriItem->id }}" {{ old('kategori_barang', $barangmasuk->kategori_barang) == $kategoriItem->id ? 'selected' : '' }}>
+                                                        {{ $kategoriItem->name }}
                                                     </option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="tanggal_masuk" class="form-label">Tanggal Barang Masuk</label>
+                                            <label for="tanggal_masuk" class="form-label"><b>Tanggal Barang
+                                                    Masuk</b></label>
                                             <input type="date" name="tanggal_masuk"
                                                 class="form-control @error('tanggal_masuk') is-invalid @enderror"
                                                 id="tanggal_masuk" placeholder="Masukkan Tanggal masuk Barang"
@@ -544,9 +413,9 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md col-lg col-xl">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="foto_barang" class="form-label">Foto Barang</label>
+                                            <label for="foto_barang" class="form-label"><b>Foto Barang</b></label>
                                             <input type="file" name="foto_barang"
                                                 class="form-control @error('foto_barang') is-invalid @enderror"
                                                 id="foto_barang" placeholder="Masukkan Foto Barang"
