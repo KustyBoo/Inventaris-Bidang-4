@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2024 at 02:05 AM
+-- Generation Time: Feb 16, 2024 at 02:39 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -40,8 +40,9 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `kode_barang`, `banyak_barang`, `created_at`, `updated_at`) VALUES
-(20, '1.3.2.05.001.004.005', 1, '2024-02-11 21:45:32', '2024-02-11 21:45:32'),
-(21, '1.3.2.05.001.004.001', 1, '2024-02-11 21:54:03', '2024-02-11 21:54:03');
+(27, '1.3.2.05.001.004.001', 1, '2024-02-12 23:31:56', '2024-02-12 23:31:56'),
+(28, '1.3.2.05.001.004.005', 1, '2024-02-12 23:33:55', '2024-02-14 18:23:29'),
+(29, '1.3.2.05.002.001.008', 5, '2024-02-12 23:40:58', '2024-02-14 18:34:53');
 
 -- --------------------------------------------------------
 
@@ -55,13 +56,14 @@ CREATE TABLE `barang_keluar` (
   `reg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nama_jenis_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `merek_tipe_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_pabrik` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bahan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_pabrik` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bahan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `perolehan_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tahun_pembelian` int(11) NOT NULL,
-  `ukuran_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `satuan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ukuran_barang` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `satuan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `keadaan_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `banyak_barang` int(11) NOT NULL,
   `harga_satuan_barang` bigint(20) NOT NULL,
   `jumlah_harga_barang` bigint(20) NOT NULL,
   `kode_ruangan` int(11) NOT NULL,
@@ -72,6 +74,15 @@ CREATE TABLE `barang_keluar` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `barang_keluar`
+--
+
+INSERT INTO `barang_keluar` (`id`, `nama_pengambil`, `reg`, `nama_jenis_barang`, `merek_tipe_barang`, `no_pabrik`, `bahan`, `perolehan_barang`, `tahun_pembelian`, `ukuran_barang`, `satuan`, `keadaan_barang`, `banyak_barang`, `harga_satuan_barang`, `jumlah_harga_barang`, `kode_ruangan`, `tanggal_keluar`, `foto_barang`, `kategori_barang`, `id_barang_masuk`, `created_at`, `updated_at`) VALUES
+(2, 'Felix', '000001', 'Filing Cabinet Besi', 'Lion', NULL, 'besi', 'Pembelian', 2012, '4 pintu', NULL, 'Kurang Baik', 1, 2130000, 2130000, 7, '2024-02-13', '20240213075615.jpg', 2, 8, '2024-02-12 23:56:15', '2024-02-12 23:56:15'),
+(3, 'Felix', '000001', 'Filing Cabinet Besi', 'Lion', NULL, 'besi', 'Pembelian', 2012, '4 pintu', NULL, 'Kurang Baik', 1, 2130000, 2130000, 7, '2024-03-15', '20240215022329.jpg', 2, 8, '2024-02-14 18:23:29', '2024-02-14 18:23:29'),
+(4, 'Kania', '000001 s/d 000006', 'Meja Rapat', 'Uno Gold Series / UOD-4056', NULL, 'kayu', 'Pembelian', 2012, 'biasa', NULL, 'Baik', 1, 2000000, 12000000, 7, '2024-02-15', '20240215023453.jpg', 1, 9, '2024-02-14 18:34:53', '2024-02-14 18:34:53');
 
 -- --------------------------------------------------------
 
@@ -95,7 +106,7 @@ CREATE TABLE `barang_masuk` (
   `jumlah_harga_barang` bigint(20) NOT NULL,
   `kode_ruangan` int(11) NOT NULL,
   `tanggal_masuk` date NOT NULL,
-  `foto_barang` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `foto_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kategori_barang` bigint(20) UNSIGNED NOT NULL,
   `id_barang` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -107,7 +118,9 @@ CREATE TABLE `barang_masuk` (
 --
 
 INSERT INTO `barang_masuk` (`id`, `reg`, `nama_jenis_barang`, `merek_tipe_barang`, `no_pabrik`, `bahan`, `perolehan_barang`, `tahun_pembelian`, `ukuran_barang`, `satuan`, `keadaan_barang`, `harga_satuan_barang`, `jumlah_harga_barang`, `kode_ruangan`, `tanggal_masuk`, `foto_barang`, `kategori_barang`, `id_barang`, `created_at`, `updated_at`) VALUES
-(3, '000001', 'Lemari Besi/Metal', 'lion', NULL, 'besi', 'Pembelian', 2012, '2 pintu', NULL, 'Kurang Baik', 2530000, 2530000, 7, '2024-02-12', '20240212055403.png', 1, 21, '2024-02-11 21:54:03', '2024-02-12 16:58:17');
+(7, '000001', 'Lemari Besi/Metal', 'Lion', NULL, 'besi', 'Pembelian', 2012, '2 pintu', NULL, 'Kurang Baik', 2530000, 2530000, 7, '2024-01-13', '20240213073156.jpg', 1, 27, '2024-02-12 23:31:56', '2024-02-12 23:31:56'),
+(8, '000001', 'Filing Cabinet Besi', 'Lion', NULL, 'besi', 'Pembelian', 2012, '4 pintu', NULL, 'Kurang Baik', 2130000, 2130000, 7, '2024-02-13', '20240213073355.jpg', 2, 28, '2024-02-12 23:33:55', '2024-02-12 23:33:55'),
+(9, '000001 s/d 000006', 'Meja Rapat', 'Uno Gold Series / UOD-4056', NULL, 'kayu', 'Pembelian', 2012, 'biasa', NULL, 'Baik', 2000000, 12000000, 7, '2024-02-13', '20240213074058.jpg', 1, 29, '2024-02-12 23:40:58', '2024-02-12 23:40:58');
 
 -- --------------------------------------------------------
 
@@ -172,7 +185,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (58, '2024_02_05_060211_create_barang_table', 3),
 (59, '2024_02_06_000504_create_kategori_table', 4),
 (61, '2024_01_22_020036_create_barang_masuk_table', 5),
-(64, '2024_01_22_020046_create_barang_keluar_table', 6);
+(68, '2024_01_22_020046_create_barang_keluar_table', 6);
 
 -- --------------------------------------------------------
 
@@ -203,7 +216,9 @@ CREATE TABLE `model_has_roles` (
 --
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
-(1, 'App\\Models\\User', 1);
+(1, 'App\\Models\\User', 1),
+(2, 'App\\Models\\User', 2),
+(2, 'App\\Models\\User', 3);
 
 -- --------------------------------------------------------
 
@@ -317,7 +332,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', NULL, '$2y$12$.CGEGccaTfDHoI7LA4.kHuaP9Z9sTQbrxzHiivWbHqynt3SknUIoS', 'soXPxXMMSomm6GW6lFkD25XS8pj8mUqv3sdLPaCtPqS8bsZBBJC6s7CerHrd', '2024-02-06 17:53:29', '2024-02-06 17:53:29');
+(1, 'Admin', 'admin@admin.com', NULL, '$2y$12$.CGEGccaTfDHoI7LA4.kHuaP9Z9sTQbrxzHiivWbHqynt3SknUIoS', 'DQSc3OoUUNDa9m2aqhd29BdcoC21kTMaHxszW2wlLYzSuwg2c24fKFqKS80b', '2024-02-06 17:53:29', '2024-02-06 17:53:29'),
+(2, 'Felix', 'felix@gmail.com', NULL, '$2y$12$iGCSs9MDZXCI1en6nG4ANOObrfGE8wrjjrZuqBs/B0vU2q3VgZjyK', 'nWBcUGnYSahVGA0YzggMD0fQMJy2CSGtuY1JUzBFQdc8BLBRkrACOnHBqzpw', '2024-02-12 19:05:18', '2024-02-12 19:05:18'),
+(3, 'Kania', 'kania@gmail.com', NULL, '$2y$12$Y8Cd4q1zPqaHBxE9BZ.ZYeWp3JaCnlq0RCTX6JAgpv7SrKxdv9Hjq', NULL, '2024-02-14 18:34:16', '2024-02-14 18:34:16');
 
 --
 -- Indexes for dumped tables
@@ -435,19 +452,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -465,7 +482,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -489,7 +506,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
