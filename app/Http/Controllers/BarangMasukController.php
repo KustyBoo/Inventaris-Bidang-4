@@ -195,15 +195,15 @@ class BarangMasukController extends Controller
     {
         $barangaset = collect();
         $baranghabispakai = collect();
-        
-        if (isset($request->tanggal_masuk)) {
-            $barangaset = BarangMasuk::where('tanggal_masuk', $request->tanggal_masuk)->where('kategori_barang', '1')->get();
-            $baranghabispakai = BarangMasuk::where('tanggal_masuk', $request->tanggal_masuk)->where('kategori_barang', '2')->get();
-        } 
-        if($request->tanggal_masuk == null){
+
+        if($request->exportbarang == 'asset'){
             $barangaset = BarangMasuk::where('kategori_barang', '1')->get();
+        }
+
+        if($request->exportbarang  == 'habispakai'){
             $baranghabispakai = BarangMasuk::where('kategori_barang', '2')->get();
         }
-        return Excel::download(new BarangMasukExport($barangaset, $baranghabispakai), 'Data-Barang-Masuk.xlsx');
+
+        return Excel::download(new BarangMasukExport($barangaset, $baranghabispakai, $request->exportbarang), 'Data-Barang-Masuk.xlsx');
     }
 }
