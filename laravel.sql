@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2024 at 02:39 AM
+-- Generation Time: Feb 19, 2024 at 04:32 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -41,8 +41,13 @@ CREATE TABLE `barang` (
 
 INSERT INTO `barang` (`id`, `kode_barang`, `banyak_barang`, `created_at`, `updated_at`) VALUES
 (27, '1.3.2.05.001.004.001', 1, '2024-02-12 23:31:56', '2024-02-12 23:31:56'),
-(28, '1.3.2.05.001.004.005', 1, '2024-02-12 23:33:55', '2024-02-14 18:23:29'),
-(29, '1.3.2.05.002.001.008', 5, '2024-02-12 23:40:58', '2024-02-14 18:34:53');
+(28, '1.3.2.05.001.004.005', 2, '2024-02-12 23:33:55', '2024-02-18 19:16:32'),
+(29, '1.3.2.05.002.001.008', 5, '2024-02-12 23:40:58', '2024-02-14 18:34:53'),
+(30, '1.3.2.05.001.004.0011', 7, '2024-02-16 00:51:01', '2024-02-18 19:09:10'),
+(34, '1.3.2.05.002.001.024', 2, '2024-02-17 02:20:29', '2024-02-17 02:20:29'),
+(35, '1.3.2.05.002.001.030', 5, '2024-02-18 02:19:58', '2024-02-18 19:08:03'),
+(36, '1.3.2.05.002.004.004', 1, '2024-02-18 19:06:11', '2024-02-18 19:06:11'),
+(37, '1.3.2.06.001.002.015', 4, '2024-02-18 19:18:15', '2024-02-18 19:19:15');
 
 -- --------------------------------------------------------
 
@@ -82,7 +87,12 @@ CREATE TABLE `barang_keluar` (
 INSERT INTO `barang_keluar` (`id`, `nama_pengambil`, `reg`, `nama_jenis_barang`, `merek_tipe_barang`, `no_pabrik`, `bahan`, `perolehan_barang`, `tahun_pembelian`, `ukuran_barang`, `satuan`, `keadaan_barang`, `banyak_barang`, `harga_satuan_barang`, `jumlah_harga_barang`, `kode_ruangan`, `tanggal_keluar`, `foto_barang`, `kategori_barang`, `id_barang_masuk`, `created_at`, `updated_at`) VALUES
 (2, 'Felix', '000001', 'Filing Cabinet Besi', 'Lion', NULL, 'besi', 'Pembelian', 2012, '4 pintu', NULL, 'Kurang Baik', 1, 2130000, 2130000, 7, '2024-02-13', '20240213075615.jpg', 2, 8, '2024-02-12 23:56:15', '2024-02-12 23:56:15'),
 (3, 'Felix', '000001', 'Filing Cabinet Besi', 'Lion', NULL, 'besi', 'Pembelian', 2012, '4 pintu', NULL, 'Kurang Baik', 1, 2130000, 2130000, 7, '2024-03-15', '20240215022329.jpg', 2, 8, '2024-02-14 18:23:29', '2024-02-14 18:23:29'),
-(4, 'Kania', '000001 s/d 000006', 'Meja Rapat', 'Uno Gold Series / UOD-4056', NULL, 'kayu', 'Pembelian', 2012, 'biasa', NULL, 'Baik', 1, 2000000, 12000000, 7, '2024-02-15', '20240215023453.jpg', 1, 9, '2024-02-14 18:34:53', '2024-02-14 18:34:53');
+(4, 'Kania', '000001 s/d 000006', 'Meja Rapat', 'Uno Gold Series / UOD-4056', NULL, 'kayu', 'Pembelian', 2012, 'biasa', NULL, 'Baik', 1, 2000000, 12000000, 7, '2024-02-15', '20240215023453.jpg', 1, 9, '2024-02-14 18:34:53', '2024-02-14 18:34:53'),
+(5, 'Admin', '000002', 'Charger laptop', 'Asus', NULL, 'Alumunium', 'Pembelian', 2012, NULL, '1', 'Baik', 1, 200000, 2000000, 2, '2024-02-16', '20240216085141.jpg', 1, 10, '2024-02-16 00:51:41', '2024-02-16 00:51:41'),
+(6, 'Felix', '000001', 'Filing Cabinet Besi', 'Lion', NULL, 'besi', 'Pembelian', 2012, '4 pintu', NULL, 'Kurang Baik', 1, 2130000, 2130000, 7, '2024-03-18', '20240218100829.jpg', 2, 8, '2024-02-18 02:08:29', '2024-02-18 02:08:29'),
+(7, 'Admin', '000002', 'Charger laptop', 'Asus', NULL, 'Alumunium', 'Pembelian', 2012, NULL, '1', 'Baik', 1, 200000, 2000000, 2, '2024-02-19', '20240219030704.jpg', 1, 10, '2024-02-18 19:07:05', '2024-02-18 19:07:05'),
+(8, 'Felix', '000002', 'Charger laptop', 'Asus', NULL, 'Alumunium', 'Pembelian', 2012, NULL, '1', 'Baik', 1, 200000, 2000000, 2, '2024-02-19', '20240219030910.jpg', 1, 10, '2024-02-18 19:09:10', '2024-02-18 19:09:10'),
+(9, 'Kania', '000001', 'Tinta Printer', 'Canon', NULL, 'Campuran', 'Pembelian', 2024, NULL, NULL, 'Baik', 1, 50000, 250000, 4, '2024-02-19', '20240219031915.jpg', 2, 14, '2024-02-18 19:19:15', '2024-02-18 19:19:15');
 
 -- --------------------------------------------------------
 
@@ -118,9 +128,14 @@ CREATE TABLE `barang_masuk` (
 --
 
 INSERT INTO `barang_masuk` (`id`, `reg`, `nama_jenis_barang`, `merek_tipe_barang`, `no_pabrik`, `bahan`, `perolehan_barang`, `tahun_pembelian`, `ukuran_barang`, `satuan`, `keadaan_barang`, `harga_satuan_barang`, `jumlah_harga_barang`, `kode_ruangan`, `tanggal_masuk`, `foto_barang`, `kategori_barang`, `id_barang`, `created_at`, `updated_at`) VALUES
-(7, '000001', 'Lemari Besi/Metal', 'Lion', NULL, 'besi', 'Pembelian', 2012, '2 pintu', NULL, 'Kurang Baik', 2530000, 2530000, 7, '2024-01-13', '20240213073156.jpg', 1, 27, '2024-02-12 23:31:56', '2024-02-12 23:31:56'),
-(8, '000001', 'Filing Cabinet Besi', 'Lion', NULL, 'besi', 'Pembelian', 2012, '4 pintu', NULL, 'Kurang Baik', 2130000, 2130000, 7, '2024-02-13', '20240213073355.jpg', 2, 28, '2024-02-12 23:33:55', '2024-02-12 23:33:55'),
-(9, '000001 s/d 000006', 'Meja Rapat', 'Uno Gold Series / UOD-4056', NULL, 'kayu', 'Pembelian', 2012, 'biasa', NULL, 'Baik', 2000000, 12000000, 7, '2024-02-13', '20240213074058.jpg', 1, 29, '2024-02-12 23:40:58', '2024-02-12 23:40:58');
+(7, '000001', 'Lemari Besi/Metal', 'Lion', NULL, 'Besi', 'Pembelian', 2012, '2 pintu', NULL, 'Kurang Baik', 2530000, 2530000, 7, '2024-01-13', '20240213073156.jpg', 1, 27, '2024-02-12 23:31:56', '2024-02-18 19:26:44'),
+(8, '000001', 'Kertas 500 RIM', 'HVS Paper One 75 gsm', NULL, NULL, 'Pembelian', 2012, NULL, NULL, 'Kurang Baik', 2130000, 4260000, 7, '2024-02-13', '20240219031632.jpg', 2, 28, '2024-02-12 23:33:55', '2024-02-18 19:16:32'),
+(9, '000001 s/d 000006', 'Meja Rapat', 'Uno Gold Series / UOD-4056', NULL, 'Kayu', 'Pembelian', 2012, 'biasa', NULL, 'Baik', 2000000, 10000000, 7, '2024-04-13', '20240213074058.jpg', 1, 29, '2024-02-12 23:40:58', '2024-02-18 19:26:20'),
+(10, '000002', 'Charger laptop', 'Asus', NULL, NULL, 'Pembelian', 2012, NULL, '1', 'Baik', 200000, 1400000, 2, '2024-02-16', '20240219031402.jpg', 1, 30, '2024-02-16 00:51:01', '2024-02-18 19:14:02'),
+(11, '000014', 'Meja 1/2 Biro', 'Saga MTB 120 / Meja Kerja 1/2 Biro', NULL, NULL, 'Pembelian', 2018, NULL, NULL, 'Rusak Berat', 993465, 1986930, 4, '2024-02-17', '20240217102029.jpg', 1, 34, '2024-02-17 02:20:29', '2024-02-17 02:20:41'),
+(12, '000001 s/d 000016', 'Kursi Rapat', 'Chitose / Kursi Rapat', NULL, NULL, 'Pembelian', 2018, NULL, NULL, 'Baik', 500000, 2500000, 7, '2024-03-18', '20240218102329.jpg', 1, 35, '2024-02-18 02:19:58', '2024-02-18 19:08:03'),
+(13, '000008', 'A.C. Split', 'Sharp / AHA 12 UCY', NULL, 'Campuran', 'Pembelian', 2018, NULL, NULL, 'Baik', 5400000, 5400000, 7, '2024-04-19', '20240219030611.jpg', 1, 36, '2024-02-18 19:06:11', '2024-02-18 19:10:01'),
+(14, '000001', 'Tinta Printer', 'Canon', NULL, 'Campuran', 'Pembelian', 2024, NULL, NULL, 'Baik', 50000, 250000, 4, '2024-02-19', '20240219031815.jpg', 2, 37, '2024-02-18 19:18:15', '2024-02-18 19:18:15');
 
 -- --------------------------------------------------------
 
@@ -332,8 +347,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', NULL, '$2y$12$.CGEGccaTfDHoI7LA4.kHuaP9Z9sTQbrxzHiivWbHqynt3SknUIoS', 'DQSc3OoUUNDa9m2aqhd29BdcoC21kTMaHxszW2wlLYzSuwg2c24fKFqKS80b', '2024-02-06 17:53:29', '2024-02-06 17:53:29'),
-(2, 'Felix', 'felix@gmail.com', NULL, '$2y$12$iGCSs9MDZXCI1en6nG4ANOObrfGE8wrjjrZuqBs/B0vU2q3VgZjyK', 'nWBcUGnYSahVGA0YzggMD0fQMJy2CSGtuY1JUzBFQdc8BLBRkrACOnHBqzpw', '2024-02-12 19:05:18', '2024-02-12 19:05:18'),
+(1, 'Admin', 'admin@admin.com', NULL, '$2y$12$.CGEGccaTfDHoI7LA4.kHuaP9Z9sTQbrxzHiivWbHqynt3SknUIoS', '8IZHgJ3e9rLBBC7Nj1kh2pKZROCUcS2mi33SSCiA9eccqs6OH2u27Fhh6Y6A', '2024-02-06 17:53:29', '2024-02-06 17:53:29'),
+(2, 'Felix', 'felix@gmail.com', NULL, '$2y$12$iGCSs9MDZXCI1en6nG4ANOObrfGE8wrjjrZuqBs/B0vU2q3VgZjyK', 'mSDBnfLPFx0KWT0yqaeGiBwz5n1eq4q8OZwKiM1n3ONtWdDt7A1eoDjjD946', '2024-02-12 19:05:18', '2024-02-12 19:05:18'),
 (3, 'Kania', 'kania@gmail.com', NULL, '$2y$12$Y8Cd4q1zPqaHBxE9BZ.ZYeWp3JaCnlq0RCTX6JAgpv7SrKxdv9Hjq', NULL, '2024-02-14 18:34:16', '2024-02-14 18:34:16');
 
 --
@@ -452,19 +467,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
