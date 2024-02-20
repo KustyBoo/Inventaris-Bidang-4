@@ -12,10 +12,12 @@ use Illuminate\Support\Facades\Auth;
 class BarangKeluarController extends Controller
 {
     public function index()
-    {
+    {   
+        $currentuser = Auth::user()->name;
+        $historybarangkeluar = BarangKeluar::where('nama_pengambil',$currentuser)->get();
         $barang_masuk = BarangMasuk::all();
         $barang_keluar = BarangKeluar::with('barang_masuk')->get();
-        return view('barangkeluar.index', ['barangkeluar' => $barang_keluar, 'barangmasuk' => $barang_masuk]);
+        return view('barangkeluar.index', ['barangkeluar' => $barang_keluar, 'barangmasuk' => $barang_masuk, 'historybarangkeluar' => $historybarangkeluar,]);
     }
 
     public function create()

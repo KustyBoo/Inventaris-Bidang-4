@@ -389,6 +389,46 @@
                         </div>
                     </div>
 
+                    @if (Auth::user()->hasRole('user'))
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">History Barang Keluar</h1>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%"
+                                        cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Nama Barang</th>
+                                                <th>Kode Ruangan</th>
+                                                <th>Banyak</th>
+                                                <th>Foto</th>
+                                                <th>Tanggal Keluar</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            @foreach ($historybarangkeluar as $history)
+                                                <tr>
+                                                    <td>{{ $history->nama_jenis_barang }}</td>
+                                                    <td>{{ $history->kode_ruangan }}</td>
+                                                    <td>{{ $history->banyak_barang }}</td>
+                                                    <td><img src="{{ asset('img/barangkeluar/' . $history->foto_barang) }}"
+                                                            alt="" style="width: 150px"></td>
+                                                    <td>{{ $history->tanggal_keluar }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
                 </div>
                 <!-- /.container-fluid -->
 
