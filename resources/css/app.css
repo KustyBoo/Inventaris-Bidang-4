@@ -13,3 +13,5 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
+
+@import "~select2/dist/css/select2.css";

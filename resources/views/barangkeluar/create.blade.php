@@ -13,6 +13,7 @@
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -22,6 +23,9 @@
 
     <!-- Custom styles for this page -->
     <link href="{{ asset('../vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body id="page-top">
@@ -172,17 +176,8 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="nama_pengambil" class="form-label">Nama</label>
-                                    <input type="text" name="nama_pengambil"
-                                        class="form-control @error('nama_pengambil') is-invalid @enderror"
-                                        id="nama_pengambil" required value="{{ Auth::user()->name }}" readonly>
-                                    @error('nama_pengambil')
-                                        <p class="form-text" style="color: red;">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="barang_id" class="form-label">Nama Barang</label>
-                                    <select class="form-control" name="barang_id"
+                                    <label for="barang_id" class="form-label"><b>Nama Barang</b></label>
+                                    <select class="nama-barang form-control" name="barang_id" style="width: 100%;"
                                         aria-label="Default Select Example">
                                         <option selected>Pilih Barang</option>
                                         @foreach ($barangmasuk as $barang)
@@ -192,7 +187,7 @@
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jumlah_ambil" class="form-label">Jumlah Ambil</label>
+                                    <label for="jumlah_ambil" class="form-label"><b>Jumlah Ambil</b></label>
                                     <input type="number" name="jumlah_ambil"
                                         class="form-control @error('jumlah_ambil') is-invalid @enderror"
                                         id="jumlah_ambil" placeholder="Masukkan Jumlah Barang yang Diambil">
@@ -201,7 +196,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="tanggal_keluar" class="form-label">Tanggal Barang Keluar</label>
+                                    <label for="tanggal_keluar" class="form-label"><b>Tanggal Barang Keluar</b></label>
                                     <input type="date" name="tanggal_keluar"
                                         class="form-control @error('tanggal_keluar') is-invalid @enderror"
                                         id="tanggal_keluar" placeholder="Masukkan Tanggal diambilnya Barang">
@@ -210,7 +205,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="foto_barang" class="form-label">Foto Barang</label>
+                                    <label for="foto_barang" class="form-label"><b>Foto Barang</b></label>
                                     <input type="file" name="foto_barang"
                                         class="form-control @error('foto_barang') is-invalid @enderror"
                                         id="foto_barang" placeholder="Masukkan Foto Barang">
@@ -289,9 +284,39 @@
         </div>
     </div>
 
+    <style>
+        .select2-container--default .select2-selection--single {
+            display: block;
+            width: 100%;
+            height: calc(1.5em + 0.75rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #6e707e;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #d1d3e2;
+            border-radius: 0.35rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #6e707e;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: calc(2.25rem - 2px);
+        }
+    </style>
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
@@ -305,6 +330,12 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.nama-barang').select2();
+        });
+    </script>
 
 </body>
 

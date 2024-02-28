@@ -14,9 +14,9 @@ class BarangKeluarController extends Controller
     public function index()
     {   
         $currentuser = Auth::user()->name;
-        $historybarangkeluar = BarangKeluar::where('nama_pengambil',$currentuser)->get();
+        $historybarangkeluar = BarangKeluar::where('nama_pengambil',$currentuser)->orderBy('tanggal_keluar', 'desc')->get();
         $barang_masuk = BarangMasuk::all();
-        $barang_keluar = BarangKeluar::with('barang_masuk')->get();
+        $barang_keluar = BarangKeluar::with('barang_masuk')->orderBy('tanggal_keluar', 'desc')->get();
         return view('barangkeluar.index', ['barangkeluar' => $barang_keluar, 'barangmasuk' => $barang_masuk, 'historybarangkeluar' => $historybarangkeluar,]);
     }
 
@@ -28,7 +28,7 @@ class BarangKeluarController extends Controller
 
     public function store(Request $request)
     {
-        $username = Auth::user()->name;
+        $nama_pengambil = Auth::user()->name;
 
         if (($request->jumlah_ambil) == 0) {
             return back()->withErrors(['jumlah_ambil' => 'Jumlah ambil tidak bisa kosong']);
@@ -60,7 +60,7 @@ class BarangKeluarController extends Controller
                 ]);
                 
                 $barang_keluar = BarangKeluar::create([
-                    'nama_pengambil' => $request->nama_pengambil,
+                    'nama_pengambil' => $nama_pengambil,
                     'reg' => $id_barang_masuk->reg,
                     'nama_jenis_barang' => $id_barang_masuk->nama_jenis_barang,
                     'merek_tipe_barang' => $id_barang_masuk->merek_tipe_barang,
