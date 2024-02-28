@@ -165,25 +165,13 @@
 
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <form id="tambahbarang" action="{{ route('barangmasuk.store') }}" method="post"
-                                enctype="multipart/form-data">
+                    <form id="tambahbarang" action="{{ route('barangmasuk.store') }}" method="post"
+                        enctype="multipart/form-data">
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="mb-3">
-                                            <label for="kode_barang" class="form-label"><b>Kode Barang</b></label>
-                                            <input type="text" name="kode_barang"
-                                                class="form-control @error('kode_barang') is-invalid @enderror"
-                                                id="kode_barang" placeholder="Masukkan Kode Barang"
-                                                value="{{ old('kode_barang') }}">
-                                            @error('kode_barang')
-                                                <p class="form-text" style="color: red;">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="mb-3">
                                             <label for="reg" class="form-label"><b>Reg</b></label>
                                             <input type="text" name="reg"
@@ -194,7 +182,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="mb-3">
                                             <label for="nama_jenis_barang" class="form-label"><b>Nama/Jenis
                                                     Barang</b></label>
@@ -207,7 +195,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="mb-3">
                                             <label for="merek_tipe_barang" class="form-label"><b>Merek/Tipe
                                                     Barang</b></label>
@@ -220,7 +208,26 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                                        <div class="mb-3">
+                                            <label for="kode_ruangan" class="form-label"><b>Kode Ruangan
+                                                    Barang</b></label>
+                                            <input type="text" name="kode_ruangan"
+                                                class="form-control @error('kode_ruangan') is-invalid @enderror"
+                                                id="kode_ruangan" placeholder="Masukkan Kode Ruangan Barang"
+                                                value="{{ old('kode_ruangan') }}">
+                                            @error('kode_ruangan')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="mb-3">
                                             <label for="no_pabrik" class="form-label"><b>No. Pabrik</b></label>
                                             <input type="text" name="no_pabrik"
@@ -232,7 +239,50 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                                        <div class="mb-3">
+                                            <label for="tahun_pembelian" class="form-label"><b>Tahun
+                                                    Pembelian</b></label>
+                                            <input type="number" name="tahun_pembelian"
+                                                class="form-control @error('tahun_pembelian') is-invalid @enderror"
+                                                id="tahun_pembelian" placeholder="Masukkan Tahun Pembelian Barang"
+                                                value="{{ old('tahun_pembelian') }}">
+                                            @error('tahun_pembelian')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                                        <div class="mb-3">
+                                            <label for="ukuran_barang" class="form-label"><b>Ukuran Barang</b></label>
+                                            <input type="text" name="ukuran_barang"
+                                                class="form-control @error('ukuran_barang') is-invalid @enderror"
+                                                id="ukuran_barang" placeholder="Masukkan Ukuran Barang"
+                                                value="{{ old('ukuran_barang') }}">
+                                            @error('ukuran_barang')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                                        <div class="mb-3">
+                                            <label for="satuan" class="form-label"><b>Satuan Barang</b></label>
+                                            <input type="text" name="satuan"
+                                                class="form-control @error('satuan') is-invalid @enderror"
+                                                id="satuan" placeholder="Masukkan Satuan Barang"
+                                                value="{{ old('satuan') }}">
+                                            @error('satuan')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6   col-xl-3">
                                         <div class="mb-3">
                                             <label for="bahan" class="form-label"><b>Bahan</b></label>
                                             <select name="bahan" class="form-control" id="">
@@ -256,7 +306,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="mb-3">
                                             <label for="perolehan_barang" class="form-label"><b>Asal/Cara Perolehan
                                                     Barang</b></label>
@@ -267,50 +317,16 @@
                                                 <option value="Pembelian"
                                                     {{ old('perolehan_barang') == 'Pembelian' ? 'selected' : '' }}>
                                                     Pembelian</option>
+                                                <option value="hibah"
+                                                    {{ old('perolehan_barang') == 'hibah' ? 'selected' : '' }}>
+                                                    Hibah</option>
                                             </select>
                                             @error('perolehan_barang')
                                                 <p class="form-text" style="color: red;">{{ $message }}</p>
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="mb-3">
-                                            <label for="tahun_pembelian" class="form-label"><b>Tahun
-                                                    Pembelian</b></label>
-                                            <input type="number" name="tahun_pembelian"
-                                                class="form-control @error('tahun_pembelian') is-invalid @enderror"
-                                                id="tahun_pembelian" placeholder="Masukkan Tahun Pembelian Barang"
-                                                value="{{ old('tahun_pembelian') }}">
-                                            @error('tahun_pembelian')
-                                                <p class="form-text" style="color: red;">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="mb-3">
-                                            <label for="ukuran_barang" class="form-label"><b>Ukuran Barang</b></label>
-                                            <input type="text" name="ukuran_barang"
-                                                class="form-control @error('ukuran_barang') is-invalid @enderror"
-                                                id="ukuran_barang" placeholder="Masukkan Ukuran Barang"
-                                                value="{{ old('ukuran_barang') }}">
-                                            @error('ukuran_barang')
-                                                <p class="form-text" style="color: red;">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="mb-3">
-                                            <label for="satuan" class="form-label"><b>Satuan Barang</b></label>
-                                            <input type="text" name="satuan"
-                                                class="form-control @error('satuan') is-invalid @enderror"
-                                                id="satuan" placeholder="Masukkan Satuan Barang"
-                                                value="{{ old('satuan') }}">
-                                            @error('satuan')
-                                                <p class="form-text" style="color: red;">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="mb-3">
                                             <label for="keadaan_barang" class="form-label"><b>Keadaan
                                                     Barang</b></label>
@@ -333,48 +349,12 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="mb-3">
-                                            <label for="banyak_barang" class="form-label"><b>Banyak Barang</b></label>
-                                            <input type="number" name="banyak_barang"
-                                                class="form-control @error('banyak_barang') is-invalid @enderror"
-                                                id="banyak_barang" placeholder="Masukkan Banyak Barang"
-                                                value="{{ old('banyak_barang') }}">
-                                            @error('banyak_barang')
-                                                <p class="form-text" style="color: red;">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="mb-3">
-                                            <label for="harga_satuan_barang" class="form-label"><b>Harga Satuan
+                                            <label for="kategori_barang" class="form-label"><b>Kategori
                                                     Barang</b></label>
-                                            <input type="number" name="harga_satuan_barang"
-                                                class="form-control @error('harga_satuan_barang') is-invalid @enderror"
-                                                id="harga_satuan_barang" placeholder="Masukkan Harga Satuan Barang"
-                                                value="{{ old('harga_satuan_barang') }}">
-                                            @error('harga_satuan_barang')
-                                                <p class="form-text" style="color: red;">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="mb-3">
-                                            <label for="kode_ruangan" class="form-label"><b>Kode Ruangan
-                                                    Barang</b></label>
-                                            <input type="text" name="kode_ruangan"
-                                                class="form-control @error('kode_ruangan') is-invalid @enderror"
-                                                id="kode_ruangan" placeholder="Masukkan Kode Ruangan Barang"
-                                                value="{{ old('kode_ruangan') }}">
-                                            @error('kode_ruangan')
-                                                <p class="form-text" style="color: red;">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="mb-3">
-                                            <label for="kategori_barang" class="form-label"><b>Kategori Barang</b></label>
-                                            <select class="form-control" name="kategori_barang" aria-label="Default Select Example">
+                                            <select class="form-control" name="kategori_barang"
+                                                aria-label="Default Select Example">
                                                 <option value="" disabled selected>Pilih Kategori Barang</option>
                                                 @foreach ($kategori as $kategoriItem)
                                                     <option value="{{ $kategoriItem->id }}"
@@ -388,7 +368,50 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-6">
+                                        <div class="mb-3">
+                                            <label for="banyak_barang" class="form-label"><b>Banyak Barang</b></label>
+                                            <input type="number" name="banyak_barang"
+                                                class="form-control @error('banyak_barang') is-invalid @enderror"
+                                                id="banyak_barang" placeholder="Masukkan Banyak Barang"
+                                                value="{{ old('banyak_barang') }}">
+                                            @error('banyak_barang')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-6">
+                                        <div class="mb-3">
+                                            <label for="harga_satuan_barang" class="form-label"><b>Harga Satuan
+                                                    Barang</b></label>
+                                            <input type="number" name="harga_satuan_barang"
+                                                class="form-control @error('harga_satuan_barang') is-invalid @enderror"
+                                                id="harga_satuan_barang" placeholder="Masukkan Harga Satuan Barang"
+                                                value="{{ old('harga_satuan_barang') }}">
+                                            @error('harga_satuan_barang')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-6">
+                                        <div class="mb-3">
+                                            <label for="kode_barang" class="form-label"><b>Kode Barang</b></label>
+                                            <input type="text" name="kode_barang"
+                                                class="form-control @error('kode_barang') is-invalid @enderror"
+                                                id="kode_barang" placeholder="Masukkan Kode Barang"
+                                                value="{{ old('kode_barang') }}">
+                                            @error('kode_barang')
+                                                <p class="form-text" style="color: red;">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-6">
                                         <div class="mb-3">
                                             <label for="tanggal_masuk" class="form-label"><b>Tanggal Barang
                                                     Masuk</b></label>
@@ -401,7 +424,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-6">
                                         <div class="mb-3">
                                             <label for="foto_barang" class="form-label"><b>Foto Barang</b></label>
                                             <input type="file" name="foto_barang"
@@ -428,10 +451,9 @@
                                         <span class="text">Simpan</span>
                                     </button>
                                 </div>
-
-                            </form>
+                            </div>
                         </div>
-                    </div>
+                    </form>
 
                 </div>
                 <!-- /.container-fluid -->
