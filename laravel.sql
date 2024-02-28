@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2024 at 04:32 AM
+-- Generation Time: Feb 28, 2024 at 10:38 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -40,14 +40,16 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `kode_barang`, `banyak_barang`, `created_at`, `updated_at`) VALUES
-(27, '1.3.2.05.001.004.001', 1, '2024-02-12 23:31:56', '2024-02-12 23:31:56'),
-(28, '1.3.2.05.001.004.005', 2, '2024-02-12 23:33:55', '2024-02-18 19:16:32'),
+(27, '1.3.2.05.001.004.001', 0, '2024-02-12 23:31:56', '2024-02-25 19:26:03'),
+(28, '1.3.2.05.001.004.005', 0, '2024-02-12 23:33:55', '2024-02-19 23:26:24'),
 (29, '1.3.2.05.002.001.008', 5, '2024-02-12 23:40:58', '2024-02-14 18:34:53'),
 (30, '1.3.2.05.001.004.0011', 7, '2024-02-16 00:51:01', '2024-02-18 19:09:10'),
 (34, '1.3.2.05.002.001.024', 2, '2024-02-17 02:20:29', '2024-02-17 02:20:29'),
-(35, '1.3.2.05.002.001.030', 5, '2024-02-18 02:19:58', '2024-02-18 19:08:03'),
-(36, '1.3.2.05.002.004.004', 1, '2024-02-18 19:06:11', '2024-02-18 19:06:11'),
-(37, '1.3.2.06.001.002.015', 4, '2024-02-18 19:18:15', '2024-02-18 19:19:15');
+(35, '1.3.2.05.002.001.030', 4, '2024-02-18 02:19:58', '2024-02-19 19:06:59'),
+(36, '1.3.2.05.002.004.004', 2, '2024-02-18 19:06:11', '2024-02-19 19:11:49'),
+(37, '1.3.2.06.001.002.015', 2, '2024-02-18 19:18:15', '2024-02-25 19:31:24'),
+(38, '1.3.2.06.001.001.048', 5, '2024-02-19 23:18:04', '2024-02-28 00:18:53'),
+(39, '1.3.2.10.002.002.009', 1, '2024-02-19 23:20:33', '2024-02-19 23:20:33');
 
 -- --------------------------------------------------------
 
@@ -92,7 +94,14 @@ INSERT INTO `barang_keluar` (`id`, `nama_pengambil`, `reg`, `nama_jenis_barang`,
 (6, 'Felix', '000001', 'Filing Cabinet Besi', 'Lion', NULL, 'besi', 'Pembelian', 2012, '4 pintu', NULL, 'Kurang Baik', 1, 2130000, 2130000, 7, '2024-03-18', '20240218100829.jpg', 2, 8, '2024-02-18 02:08:29', '2024-02-18 02:08:29'),
 (7, 'Admin', '000002', 'Charger laptop', 'Asus', NULL, 'Alumunium', 'Pembelian', 2012, NULL, '1', 'Baik', 1, 200000, 2000000, 2, '2024-02-19', '20240219030704.jpg', 1, 10, '2024-02-18 19:07:05', '2024-02-18 19:07:05'),
 (8, 'Felix', '000002', 'Charger laptop', 'Asus', NULL, 'Alumunium', 'Pembelian', 2012, NULL, '1', 'Baik', 1, 200000, 2000000, 2, '2024-02-19', '20240219030910.jpg', 1, 10, '2024-02-18 19:09:10', '2024-02-18 19:09:10'),
-(9, 'Kania', '000001', 'Tinta Printer', 'Canon', NULL, 'Campuran', 'Pembelian', 2024, NULL, NULL, 'Baik', 1, 50000, 250000, 4, '2024-02-19', '20240219031915.jpg', 2, 14, '2024-02-18 19:19:15', '2024-02-18 19:19:15');
+(9, 'Kania', '000001', 'Tinta Printer', 'Canon', NULL, 'Campuran', 'Pembelian', 2024, NULL, NULL, 'Baik', 1, 50000, 250000, 4, '2024-02-19', '20240219031915.jpg', 2, 14, '2024-02-18 19:19:15', '2024-02-18 19:19:15'),
+(10, 'Admin', '000001', 'Kertas 500 RIM', 'HVS Paper One 75 gsm', NULL, NULL, 'Pembelian', 2012, NULL, NULL, 'Kurang Baik', 1, 2130000, 4260000, 7, '2024-02-20', '20240220001454.jpg', 2, 8, '2024-02-19 16:14:54', '2024-02-19 16:14:54'),
+(11, 'Felix', '000001', 'Tinta Printer', 'Canon', NULL, 'Campuran', 'Pembelian', 2024, NULL, NULL, 'Baik', 1, 50000, 250000, 4, '2024-02-20', '20240220030606.jpg', 2, 14, '2024-02-19 19:06:06', '2024-02-19 19:06:06'),
+(12, 'Kania', '000001 s/d 000016', 'Kursi Rapat', 'Chitose / Kursi Rapat', NULL, NULL, 'Pembelian', 2018, NULL, NULL, 'Baik', 1, 500000, 2500000, 7, '2024-02-20', '20240220030659.jpg', 1, 12, '2024-02-19 19:06:59', '2024-02-19 19:06:59'),
+(13, 'Rizky Fajar Fanani', '000001', 'Kertas 500 RIM', 'HVS Paper One 75 gsm', NULL, NULL, 'Pembelian', 2012, NULL, NULL, 'Kurang Baik', 1, 2130000, 4260000, 7, '2024-02-20', '20240220072624.jpg', 2, 8, '2024-02-19 23:26:24', '2024-02-19 23:26:24'),
+(14, 'Felix', '000001', 'Lemari Besi/Metal', 'Lion', NULL, 'Besi', 'Pembelian', 2012, '2 pintu', NULL, 'Kurang Baik', 1, 2530000, 2530000, 7, '2024-02-26', '20240226032603.jpg', 1, 7, '2024-02-25 19:26:03', '2024-02-25 19:26:03'),
+(15, 'Kania', '000001', 'Tinta Printer', 'Canon', NULL, 'Campuran', 'Pembelian', 2024, NULL, NULL, 'Baik', 1, 50000, 250000, 4, '2024-02-26', '20240226033124.jpg', 2, 14, '2024-02-25 19:31:24', '2024-02-25 19:31:24'),
+(16, 'Admin', '000021', 'Uninterruptible Power Supply (UPS)', 'ICA Line Interaktive UPS / 602B', '1117Q1701559', 'Campuran', 'Pembelian', 2018, 'biasa', 'buah', 'Baik', 1, 2735000, 2735000, 7, '2024-02-28', '20240228081822.jpg', 1, 15, '2024-02-28 00:18:22', '2024-02-28 00:18:22');
 
 -- --------------------------------------------------------
 
@@ -134,8 +143,10 @@ INSERT INTO `barang_masuk` (`id`, `reg`, `nama_jenis_barang`, `merek_tipe_barang
 (10, '000002', 'Charger laptop', 'Asus', NULL, NULL, 'Pembelian', 2012, NULL, '1', 'Baik', 200000, 1400000, 2, '2024-02-16', '20240219031402.jpg', 1, 30, '2024-02-16 00:51:01', '2024-02-18 19:14:02'),
 (11, '000014', 'Meja 1/2 Biro', 'Saga MTB 120 / Meja Kerja 1/2 Biro', NULL, NULL, 'Pembelian', 2018, NULL, NULL, 'Rusak Berat', 993465, 1986930, 4, '2024-02-17', '20240217102029.jpg', 1, 34, '2024-02-17 02:20:29', '2024-02-17 02:20:41'),
 (12, '000001 s/d 000016', 'Kursi Rapat', 'Chitose / Kursi Rapat', NULL, NULL, 'Pembelian', 2018, NULL, NULL, 'Baik', 500000, 2500000, 7, '2024-03-18', '20240218102329.jpg', 1, 35, '2024-02-18 02:19:58', '2024-02-18 19:08:03'),
-(13, '000008', 'A.C. Split', 'Sharp / AHA 12 UCY', NULL, 'Campuran', 'Pembelian', 2018, NULL, NULL, 'Baik', 5400000, 5400000, 7, '2024-04-19', '20240219030611.jpg', 1, 36, '2024-02-18 19:06:11', '2024-02-18 19:10:01'),
-(14, '000001', 'Tinta Printer', 'Canon', NULL, 'Campuran', 'Pembelian', 2024, NULL, NULL, 'Baik', 50000, 250000, 4, '2024-02-19', '20240219031815.jpg', 2, 37, '2024-02-18 19:18:15', '2024-02-18 19:18:15');
+(13, '000008', 'A.C. Split', 'Sharp / AHA 12 UCY', NULL, 'Campuran', 'Pembelian', 2018, NULL, NULL, 'Baik', 5400000, 10800000, 7, '2024-04-19', '20240219030611.jpg', 1, 36, '2024-02-18 19:06:11', '2024-02-19 19:11:49'),
+(14, '000001', 'Tinta Printer', 'Canon', NULL, 'Campuran', 'Pembelian', 2024, NULL, NULL, 'Baik', 50000, 250000, 4, '2024-02-19', '20240219031815.jpg', 2, 37, '2024-02-18 19:18:15', '2024-02-18 19:18:15'),
+(15, '000021', 'Uninterruptible Power Supply (UPS)', 'ICA Line Interaktive UPS / 602B', '1117Q1701559', 'Campuran', 'Pembelian', 2018, 'biasa', 'buah', 'Baik', 2735000, 13675000, 7, '2024-02-20', '20240220071804.jpg', 1, 38, '2024-02-19 23:18:04', '2024-02-28 00:18:53'),
+(16, '000001', 'Scanner (Peralatan Mini Komputer)', 'Fujitsu / Image scanner', NULL, NULL, 'Pembelian', 2018, NULL, NULL, 'Baik', 10075320, 10075320, 7, '2024-02-20', '20240220072033.png', 2, 39, '2024-02-19 23:20:33', '2024-02-19 23:20:33');
 
 -- --------------------------------------------------------
 
@@ -233,7 +244,8 @@ CREATE TABLE `model_has_roles` (
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (1, 'App\\Models\\User', 1),
 (2, 'App\\Models\\User', 2),
-(2, 'App\\Models\\User', 3);
+(2, 'App\\Models\\User', 3),
+(2, 'App\\Models\\User', 4);
 
 -- --------------------------------------------------------
 
@@ -347,9 +359,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', NULL, '$2y$12$.CGEGccaTfDHoI7LA4.kHuaP9Z9sTQbrxzHiivWbHqynt3SknUIoS', '8IZHgJ3e9rLBBC7Nj1kh2pKZROCUcS2mi33SSCiA9eccqs6OH2u27Fhh6Y6A', '2024-02-06 17:53:29', '2024-02-06 17:53:29'),
-(2, 'Felix', 'felix@gmail.com', NULL, '$2y$12$iGCSs9MDZXCI1en6nG4ANOObrfGE8wrjjrZuqBs/B0vU2q3VgZjyK', 'mSDBnfLPFx0KWT0yqaeGiBwz5n1eq4q8OZwKiM1n3ONtWdDt7A1eoDjjD946', '2024-02-12 19:05:18', '2024-02-12 19:05:18'),
-(3, 'Kania', 'kania@gmail.com', NULL, '$2y$12$Y8Cd4q1zPqaHBxE9BZ.ZYeWp3JaCnlq0RCTX6JAgpv7SrKxdv9Hjq', NULL, '2024-02-14 18:34:16', '2024-02-14 18:34:16');
+(1, 'Admin', 'admin@admin.com', NULL, '$2y$12$.CGEGccaTfDHoI7LA4.kHuaP9Z9sTQbrxzHiivWbHqynt3SknUIoS', 'NS6GRUsd0xAW7zjCyi0XoJSKbZU60DpX7wM3zUp5m7v01ovn2ENoae2sfXxi', '2024-02-06 17:53:29', '2024-02-06 17:53:29'),
+(2, 'Felix', 'felix@gmail.com', NULL, '$2y$12$iGCSs9MDZXCI1en6nG4ANOObrfGE8wrjjrZuqBs/B0vU2q3VgZjyK', '1jx3CqX2oh9KCZ7N8h6ApU091xN3FAIwJ1YJHD8doEuLOtJN7YbRPHbpw6WY', '2024-02-12 19:05:18', '2024-02-12 19:05:18'),
+(3, 'Kania', 'kania@gmail.com', NULL, '$2y$12$Y8Cd4q1zPqaHBxE9BZ.ZYeWp3JaCnlq0RCTX6JAgpv7SrKxdv9Hjq', NULL, '2024-02-14 18:34:16', '2024-02-14 18:34:16'),
+(4, 'Rizky Fajar Fanani', 'rizky@gmail.com', NULL, '$2y$12$Xb0aDRCjO..HHZ1KdLzk2u7FOG/KTOUs9ubsPUxiVjHOUpSE2vG.y', NULL, '2024-02-19 23:23:20', '2024-02-19 23:23:20');
 
 --
 -- Indexes for dumped tables
@@ -467,19 +480,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -521,7 +534,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
